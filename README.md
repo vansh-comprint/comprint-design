@@ -2,6 +2,69 @@
 
 > **The System Core.** A tech-forward, minimal, engineered brand. Linear / Vercel / Anthropic, lit by a single blue spotlight.
 
+[**↗ View live previews**](https://vansh-comprint.github.io/comprint-design/preview/) · [**↗ Open the deck**](https://vansh-comprint.github.io/comprint-design/slides/)
+
+<p align="center">
+  <img src="assets/previews/brand-signature.png" alt="Signature visual — grid + spotlight" width="720">
+</p>
+
+---
+
+## Preview
+
+### Brand
+
+| Logo | Signature visual |
+| :--- | :--- |
+| <img src="assets/previews/brand-logo.png" width="420" alt="Brand logo"> | <img src="assets/previews/brand-signature.png" width="420" alt="Signature visual"> |
+| **Ghost type** | **Corner metadata** |
+| <img src="assets/previews/brand-ghost-type.png" width="420" alt="Ghost type"> | <img src="assets/previews/brand-metadata.png" width="420" alt="Corner metadata"> |
+
+### Color
+
+| | |
+| :--- | :--- |
+| <img src="assets/previews/color-black.png" width="420" alt="Black family"> | <img src="assets/previews/color-white.png" width="420" alt="White family"> |
+| <img src="assets/previews/color-greys.png" width="420" alt="Slate greys"> | <img src="assets/previews/color-blue.png" width="420" alt="Signature blue"> |
+
+<p align="center">
+  <img src="assets/previews/color-gradients.png" alt="Gradients — spotlight, beam, surface, panel" width="720">
+</p>
+
+### Typography
+
+| | |
+| :--- | :--- |
+| <img src="assets/previews/type-display.png" width="420" alt="Display — Chakra Petch 900"> | <img src="assets/previews/type-body.png" width="420" alt="Body type"> |
+| <img src="assets/previews/type-mono.png" width="420" alt="Mono — TWK Everett Mono"> | <img src="assets/previews/type-eyebrow.png" width="420" alt="Eyebrow labels"> |
+
+<p align="center">
+  <img src="assets/previews/type-scale.png" alt="Type scale" width="720">
+</p>
+
+### Spacing & elevation
+
+| Scale | Radii | Elevation |
+| :--- | :--- | :--- |
+| <img src="assets/previews/spacing-scale.png" width="280" alt="Spacing scale"> | <img src="assets/previews/spacing-radii.png" width="280" alt="Radii"> | <img src="assets/previews/spacing-elevation.png" width="280" alt="Elevation / shadows"> |
+
+### Components
+
+| | |
+| :--- | :--- |
+| <img src="assets/previews/comp-buttons.png" width="420" alt="Buttons"> | <img src="assets/previews/comp-cards.png" width="420" alt="Cards"> |
+| <img src="assets/previews/comp-inputs.png" width="420" alt="Inputs"> | <img src="assets/previews/comp-stats.png" width="420" alt="Stat tiles"> |
+
+### Sample deck (16:9)
+
+<p align="center">
+  <img src="assets/previews/slides/slide-01.png" alt="Slide 1 — Title" width="720"><br>
+  <img src="assets/previews/slides/slide-02.png" alt="Slide 2 — Section divider" width="720"><br>
+  <img src="assets/previews/slides/slide-03.png" alt="Slide 3 — Content" width="720"><br>
+  <img src="assets/previews/slides/slide-04.png" alt="Slide 4 — Stats grid" width="720"><br>
+  <img src="assets/previews/slides/slide-05.png" alt="Slide 5 — Closing" width="720">
+</p>
+
 ---
 
 ## Brand DNA
@@ -98,6 +161,7 @@ SKILL.md                  ← agent-skill manifest (Claude Code compatible)
 assets/
   logo-dark.png             wordmark on light
   logo-light.png            wordmark on dark
+  previews/                 ← rendered PNG snapshots of every preview card + slide (used by README)
 preview/                  ← Design System tab cards (700px wide)
   color-*.html              palette cards (black / white / greys / blue / gradients)
   type-*.html               display / body / scale / eyebrow specimens

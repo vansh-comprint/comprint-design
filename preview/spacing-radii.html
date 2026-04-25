@@ -1,0 +1,69 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Corner Treatments</title><link rel="stylesheet" href="_card.css">
+<style>
+  .swatch{width:84px;height:84px;background:#E2E8F0;position:relative;}
+  .lbl{font:500 11px Inter;margin-top:10px;color:#1D1D1F;letter-spacing:.02em;}
+  .sub{font:400 10px 'JetBrains Mono',monospace;color:#94A3B8;margin-top:2px;}
+  .pill{width:140px;height:44px;background:#1D4ED8;}
+  /* crosshair corners */
+  .xh::before,.xh::after,.xh > span::before,.xh > span::after{content:"";position:absolute;background:#1D1D1F;width:14px;height:1px;}
+  .xh::before{top:0;left:-5px;}
+  .xh::after{top:0;right:-5px;}
+  .xh > span{position:absolute;inset:0;pointer-events:none;}
+  .xh > span::before{bottom:0;left:-5px;top:auto;}
+  .xh > span::after{bottom:0;right:-5px;top:auto;}
+  .xh-v{position:absolute;width:1px;height:14px;background:#1D1D1F;}
+  /* corner brackets (L-shapes) */
+  .br i{position:absolute;width:12px;height:12px;border:1px solid #1D1D1F;}
+  .br i.tl{top:-1px;left:-1px;border-right:0;border-bottom:0;}
+  .br i.tr{top:-1px;right:-1px;border-left:0;border-bottom:0;}
+  .br i.bl{bottom:-1px;left:-1px;border-right:0;border-top:0;}
+  .br i.br{bottom:-1px;right:-1px;border-left:0;border-top:0;}
+  /* notched corners */
+  .notch{clip-path:polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);}
+</style>
+</head>
+<body>
+<div class="card-frame">
+  <div class="eyebrow">Corner Treatments — All Sharp · Varied Articulation</div>
+  <div style="display:flex;gap:28px;align-items:flex-start;margin-top:14px;flex-wrap:wrap;">
+
+    <div style="text-align:center;">
+      <div class="swatch"></div>
+      <div class="lbl">plain</div>
+      <div class="sub">0 radius · hairline</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="swatch br"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
+      <div class="lbl">bracketed</div>
+      <div class="sub">12 px L-marks</div>
+    </div>
+
+    <div style="text-align:center;position:relative;">
+      <div class="swatch xh"><span></span>
+        <i class="xh-v" style="top:-5px;left:0;"></i>
+        <i class="xh-v" style="top:-5px;right:0;"></i>
+        <i class="xh-v" style="bottom:-5px;left:0;"></i>
+        <i class="xh-v" style="bottom:-5px;right:0;"></i>
+      </div>
+      <div class="lbl">crosshair</div>
+      <div class="sub">+ marks at corners</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="swatch notch" style="background:#1D1D1F;"></div>
+      <div class="lbl">notched</div>
+      <div class="sub">10 px chamfer</div>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="swatch" style="background:#1D4ED8;width:140px;height:44px;"></div>
+      <div class="lbl">button · sharp</div>
+      <div class="sub">0 radius</div>
+    </div>
+
+  </div>
+  <div style="font:400 11px/1.5 Inter;color:#94A3B8;margin-top:22px;max-width:560px;">No rounded corners anywhere in the system. Differentiation is structural — brackets, crosshairs, chamfers — not softness.</div>
+</div>
+</body></html>

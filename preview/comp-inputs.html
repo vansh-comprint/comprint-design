@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Inputs</title><link rel="stylesheet" href="_card.css"></head>
+<body>
+<div class="card-frame" style="background:#F6F6F8;">
+  <div class="eyebrow">Form Inputs — Sharp, Terminal-Lean</div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
+    <!-- Default: squared, monospace placeholder -->
+    <div style="position:relative;">
+      <div style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font:500 9px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">EMAIL</div>
+      <input placeholder="hello@comprint.com" style="font:400 14px 'TWK Everett Mono',monospace;padding:14px 20px 14px 84px;border:1px solid #131313;border-radius:0;background:#F6F6F8;color:#131313;width:100%;outline:none;box-sizing:border-box;" />
+    </div>
+    <!-- Focused: deep blue underline, no box -->
+    <div style="position:relative;">
+      <div style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font:500 9px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#1D4ED8;">ACTIVE</div>
+      <input placeholder="│ typing…" style="font:400 14px 'TWK Everett Mono',monospace;padding:14px 20px 14px 90px;border:none;border-bottom:2px solid #1D4ED8;border-radius:0;background:transparent;color:#131313;width:100%;outline:none;box-sizing:border-box;" />
+    </div>
+    <!-- Row: subject + priority (no radius, hairline) -->
+    <div style="display:flex;gap:0;border:1px solid #E2E8F0;background:#F6F6F8;">
+      <div style="flex:1;padding:14px 18px;font:400 13px 'TWK Everett Mono',monospace;color:#131313;border-right:1px solid #E2E8F0;"><span style="color:#94A3B8;">SUBJECT</span> &nbsp; Q1 vision</div>
+      <div style="flex:1;padding:14px 18px;font:400 13px 'TWK Everett Mono',monospace;color:#131313;display:flex;justify-content:space-between;"><span><span style="color:#94A3B8;">PRIORITY</span> &nbsp; HIGH</span><span style="color:#94A3B8;">▾</span></div>
+    </div>
+  </div>
+  <div style="font:400 11px/1.4 Inter;color:#94A3B8;margin-top:12px;">Zero radius. 1px hairline borders. Mono inside the field. Focus state drops the box and leaves a single Deep Blue underline.</div>
+</div>
+</body></html>

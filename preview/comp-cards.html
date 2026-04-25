@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cards</title><link rel="stylesheet" href="_card.css"></head>
+<body>
+<div class="card-frame" style="background:#F6F6F8;">
+  <div class="eyebrow">Cards — Sharp, Minimal Radius</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;">
+    <!-- Light card: 2px radius, thin border, no shadow -->
+    <div style="background:#F6F6F8;border:1px solid #131313;border-radius:2px;padding:20px;">
+      <div style="font:500 10px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">MODULE</div>
+      <div style="font:600 18px/1.2 Inter;margin-top:10px;color:#131313;">Brand Intelligence</div>
+      <div style="font:400 13px/1.5 Inter;color:#475569;margin-top:6px;">Quietly intelligent. Engineered for precision.</div>
+    </div>
+    <!-- Dark card: chamfered cut corner -->
+    <div style="background:#131313;border:1px solid rgba(246,246,248,.08);padding:20px;color:#F6F6F8;clip-path:polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);">
+      <div style="font:500 10px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#1D4ED8;">ACTIVE</div>
+      <div style="font:600 18px/1.2 Inter;margin-top:10px;">System Core</div>
+      <div style="font:400 13px/1.5 Inter;color:rgba(246,246,248,.72);margin-top:6px;">Chamfered on opposing corners. Used sparingly.</div>
+    </div>
+  </div>
+  <div style="font:400 11px/1.4 Inter;color:#94A3B8;margin-top:12px;">Default: 2px radius + 1px border. Reserve the 16px chamfer for hero/active cards — one per layout, not every card.</div>
+</div>
+</body></html>

@@ -1,0 +1,365 @@
+/* =========================================================
+   COMPRINT — Design System Tokens
+   The System Core
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* TWK Everett Mono — brand monospace face (local OTFs) */
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 100; font-style: normal; src: url('fonts/TWKEverettMono-Hairline.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 100; font-style: italic; src: url('fonts/TWKEverettMono-HairlineItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 200; font-style: normal; src: url('fonts/TWKEverettMono-Thin.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 200; font-style: italic; src: url('fonts/TWKEverettMono-ThinItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 250; font-style: normal; src: url('fonts/TWKEverettMono-Ultralight.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 250; font-style: italic; src: url('fonts/TWKEverettMono-UltralightItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 300; font-style: normal; src: url('fonts/TWKEverettMono-Light.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 300; font-style: italic; src: url('fonts/TWKEverettMono-LightItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 400; font-style: normal; src: url('fonts/TWKEverettMono-Regular.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 400; font-style: italic; src: url('fonts/TWKEverettMono-RegularItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 500; font-style: normal; src: url('fonts/TWKEverettMono-Medium.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 500; font-style: italic; src: url('fonts/TWKEverettMono-MediumItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 700; font-style: normal; src: url('fonts/TWKEverettMono-Bold.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 700; font-style: italic; src: url('fonts/TWKEverettMono-BoldItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 800; font-style: normal; src: url('fonts/TWKEverettMono-Extrabold.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 800; font-style: italic; src: url('fonts/TWKEverettMono-ExtraboldItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 900; font-style: normal; src: url('fonts/TWKEverettMono-Black.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 900; font-style: italic; src: url('fonts/TWKEverettMono-BlackItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 950; font-style: normal; src: url('fonts/TWKEverettMono-Super.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'TWK Everett Mono'; font-weight: 950; font-style: italic; src: url('fonts/TWKEverettMono-SuperItalic.otf') format('opentype'); font-display: swap; }
+
+/* Chakra Petch — brand display face (local files, weights 300–700) */
+@font-face { font-family: 'Chakra Petch'; font-weight: 300; font-style: normal; src: url('fonts/ChakraPetch-Light.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 300; font-style: italic; src: url('fonts/ChakraPetch-LightItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 400; font-style: normal; src: url('fonts/ChakraPetch-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 400; font-style: italic; src: url('fonts/ChakraPetch-Italic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 500; font-style: normal; src: url('fonts/ChakraPetch-Medium.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 500; font-style: italic; src: url('fonts/ChakraPetch-MediumItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 600; font-style: normal; src: url('fonts/ChakraPetch-SemiBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 600; font-style: italic; src: url('fonts/ChakraPetch-SemiBoldItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; font-style: normal; src: url('fonts/ChakraPetch-Bold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; font-style: italic; src: url('fonts/ChakraPetch-BoldItalic.ttf') format('truetype'); font-display: swap; }
+/* Note: 900 is not shipped in the TTF set — map 800/900 to Bold so older tokens still resolve. */
+@font-face { font-family: 'Chakra Petch'; font-weight: 800; font-style: normal; src: url('fonts/ChakraPetch-Bold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Chakra Petch'; font-weight: 900; font-style: normal; src: url('fonts/ChakraPetch-Bold.ttf') format('truetype'); font-display: swap; }
+
+:root {
+  /* ---------- BASE COLOR TOKENS ---------- */
+
+  /* Black family */
+  --black:         #131313;  /* brand black */
+  --black-deep:    #020617;  /* preferred dark background */
+  --black-soft:    #0F172A;  /* elevated surfaces on dark */
+
+  /* White family */
+  --white:         #F6F6F8;  /* brand white (off-white) */
+  --white-pure:    #FFFFFF;  /* pure white if ever needed */
+  --white-dim:     rgba(255, 255, 255, 0.72);
+  --white-faint:   rgba(255, 255, 255, 0.08);
+
+  /* Slate greys */
+  --grey-50:       #F8FAFC;
+  --grey-100:      #E2E8F0;
+  --grey-300:      #CBD5E1;
+  --grey-500:      #94A3B8;
+  --grey-700:      #475569;
+  --grey-900:      #0F172A;
+
+  /* Signature blue — Deep-led */
+  --blue:          #1D4ED8;  /* primary brand blue */
+  --blue-mid:      #2563EB;  /* hover · mid-gradient */
+  --blue-light:    #93C5FD;
+  --blue-deep:     #1D4ED8;  /* alias retained for back-compat */
+  --blue-ink:      #172554;
+
+  /* ---------- SEMANTIC TOKENS (light mode default) ---------- */
+  --bg:            var(--white);
+  --bg-elevated:   var(--grey-50);
+  --fg:            var(--grey-900);
+  --fg-2:          var(--grey-700);
+  --fg-3:          var(--grey-500);
+  --border:        var(--grey-100);
+  --border-strong: var(--grey-300);
+  --accent:        var(--blue);
+  --accent-hover:  var(--blue-mid);
+  --accent-tint:   var(--blue-light);
+
+  /* ---------- GRADIENTS (the only allowed) ---------- */
+  --grad-spotlight: radial-gradient(ellipse at 30% 40%, #93C5FD 0%, #2563EB 20%, #020617 70%);
+  --grad-beam:      linear-gradient(135deg, transparent 0%, rgba(147,197,253,0.4) 50%, transparent 100%);
+  --grad-surface:   linear-gradient(135deg, #000000 0%, #020617 50%, #172554 100%);
+  --grad-panel:     linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display:  'Chakra Petch', 'Space Grotesk', sans-serif;
+  --font-body:     'Inter', 'TWK Everett', 'General Sans', -apple-system, system-ui, sans-serif;
+  --font-mono:     'TWK Everett Mono', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale (16px base) */
+  --fs-display-xl: 120px;
+  --fs-display-l:  80px;
+  --fs-h1:         48px;
+  --fs-h2:         32px;
+  --fs-h3:         24px;
+  --fs-body-l:     18px;
+  --fs-body:       16px;
+  --fs-caption:    13px;
+  --fs-eyebrow:    11px;
+
+  /* ---------- SPACING ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;   /* slide edge margin */
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---------- RADII ---------- */
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;   /* cards */
+  --radius-pill: 999px;  /* buttons */
+
+  /* ---------- SHADOWS / ELEVATION ---------- */
+  --shadow-none:  none;
+  --shadow-sm:    0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md:    0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg:    0 12px 32px rgba(15, 23, 42, 0.12);
+  --shadow-xl:    0 24px 60px rgba(15, 23, 42, 0.18);
+  --shadow-blue:  0 0 0 1px rgba(37, 99, 235, 0.3), 0 0 24px rgba(37, 99, 235, 0.25);
+  --shadow-glow:  0 0 8px rgba(37, 99, 235, 0.3);
+
+  /* ---------- MOTION ---------- */
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:     150ms;
+  --dur-base:     200ms;
+  --dur-slow:     400ms;
+  --dur-pulse:    1500ms;
+}
+
+/* ---------- DARK MODE SEMANTIC REMAPPING ---------- */
+.theme-dark,
+[data-theme="dark"] {
+  --bg:            var(--black-deep);
+  --bg-elevated:   var(--black-soft);
+  --fg:            var(--white);
+  --fg-2:          var(--white-dim);
+  --fg-3:          var(--grey-500);
+  --border:        var(--white-faint);
+  --border-strong: rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================================
+   BASE ELEMENTS — semantic type styles
+   ========================================================= */
+
+html, body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.display-xl, h1.display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--fs-display-xl);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.display-l {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--fs-display-l);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.3;
+}
+
+p, .body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+.body-l {
+  font-size: var(--fs-body-l);
+  line-height: 1.5;
+}
+
+.caption {
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--fg-3);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  line-height: 1.0;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* =========================================================
+   SIGNATURE VISUAL — Grid + Spotlight
+   ========================================================= */
+
+.comprint-stage {
+  position: relative;
+  background: var(--grad-surface);
+  overflow: hidden;
+  color: var(--white);
+}
+.comprint-stage::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 80px 80px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
+          mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
+  pointer-events: none;
+}
+.comprint-stage::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 800px 500px at 30% 30%,
+    rgba(147,197,253,.5) 0%,
+    rgba(37,99,235,.25) 30%,
+    transparent 70%);
+  pointer-events: none;
+}
+.comprint-stage > * { position: relative; z-index: 1; }
+
+/* =========================================================
+   LOGO — pulsing square dot
+   ========================================================= */
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1em;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: baseline;
+  color: currentColor;
+  line-height: 1;
+  white-space: nowrap;
+}
+.logo::after {
+  content: '';
+  display: inline-block;
+  width: 0.25em;
+  height: 0.25em;
+  margin-left: 0.1em;
+  background: currentColor;
+  border-radius: 1px;
+  animation: comprint-pulse var(--dur-pulse) var(--ease-in-out) infinite;
+}
+@keyframes comprint-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+/* =========================================================
+   COMPONENTS
+   ========================================================= */
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-body);
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--dur-base) var(--ease-out),
+              background var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+}
+.btn:hover { transform: scale(1.02); }
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--blue-mid);
+  box-shadow: var(--shadow-glow);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--border-strong);
+}
+.btn-ghost {
+  background: var(--white-faint);
+  color: var(--white);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+.card-dark {
+  background: var(--black-soft);
+  border-color: var(--white-faint);
+  color: var(--white);
+}
+
+.pill-divider { color: var(--fg-3); margin: 0 0.5em; font-weight: 300; }

@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Corner Metadata</title><link rel="stylesheet" href="_card.css">
+<style>
+  .crosshair{position:absolute;width:18px;height:18px;z-index:2;}
+  .crosshair::before,.crosshair::after{content:"";position:absolute;background:rgba(255,255,255,.6);}
+  .crosshair::before{left:50%;top:0;bottom:0;width:1px;transform:translateX(-.5px);}
+  .crosshair::after{top:50%;left:0;right:0;height:1px;transform:translateY(-.5px);}
+  /* rails sit between the crosshair centers; inset 0 (center of crosshair = edge of parent) */
+  .rail{position:absolute;}
+  .rail.h{left:0;right:0;height:0;border-top:1px dashed rgba(255,255,255,.22);}
+  .rail.v{top:0;bottom:0;width:0;border-left:1px dashed rgba(255,255,255,.22);}
+</style>
+</head>
+<body>
+<div class="card-frame dark" style="background:#020617;">
+  <div class="eyebrow" style="color:#94A3B8;">Corner Metadata — Crosshair Corners (+)</div>
+  <div style="position:relative;height:220px;margin-top:10px;">
+    <!-- dotted rails exactly between crosshair centers -->
+    <div class="rail h" style="top:0;"></div>
+    <div class="rail h" style="bottom:0;"></div>
+    <div class="rail v" style="left:0;"></div>
+    <div class="rail v" style="right:0;"></div>
+
+    <!-- crosshairs, centered ON the corner points -->
+    <div class="crosshair" style="top:-9px;left:-9px;"></div>
+    <div class="crosshair" style="top:-9px;right:-9px;"></div>
+    <div class="crosshair" style="bottom:-9px;left:-9px;"></div>
+    <div class="crosshair" style="bottom:-9px;right:-9px;"></div>
+
+    <div style="position:absolute;top:12px;left:16px;font:900 18px 'Chakra Petch',sans-serif;letter-spacing:-0.03em;color:#fff;display:inline-flex;align-items:baseline;">C<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:1px;margin-left:.1em;"></span></div>
+    <div style="position:absolute;top:14px;right:16px;font:500 10px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">PROJECT&nbsp;&nbsp;|&nbsp;&nbsp;DECK-24</div>
+    <div style="position:absolute;bottom:12px;left:16px;font:500 10px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">© COMPRINT</div>
+    <div style="position:absolute;bottom:12px;right:16px;font:500 10px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">21.04.2026&nbsp;&nbsp;03/24</div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 11px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.4);">CONTENT ZONE</div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>COMPRINT · Deck</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin:0; background:#000; color:#fff; font-family: var(--font-body); }
+  section { background:#fff; color:#0F172A; overflow:hidden; }
+
+  /* Signature stage applied inline per slide */
+  .stage { position:relative; width:100%; height:100%; background: linear-gradient(135deg,#000 0%,#020617 50%,#172554 100%); color:#fff; overflow:hidden; }
+  .stage::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:80px 80px; -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%); mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%); pointer-events:none; }
+  .stage::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 1000px 620px at 28% 32%, rgba(147,197,253,.5) 0%, rgba(37,99,235,.25) 30%, transparent 70%); pointer-events:none; }
+  .stage > * { position:relative; z-index:1; }
+
+  .pad { padding: 64px; height:100%; box-sizing:border-box; }
+
+  .eyebrow { font:500 20px/1 var(--font-body); letter-spacing:.3em; text-transform:uppercase; color:#94A3B8; }
+  .display { font:900 180px/1 var(--font-display); letter-spacing:-0.03em; text-transform:uppercase; }
+  .display-sm { font:900 120px/1 var(--font-display); letter-spacing:-0.03em; text-transform:uppercase; }
+
+  .logo-lg { font:900 96px/1 var(--font-display); letter-spacing:-0.03em; text-transform:uppercase; display:inline-flex; align-items:baseline; }
+  .logo-lg::after { content:''; display:inline-block; width:.25em; height:.25em; background:currentColor; border-radius:2px; margin-left:.1em; animation: pulse 1.5s ease-in-out infinite; }
+  .logo-md { font:900 48px/1 var(--font-display); letter-spacing:-0.03em; text-transform:uppercase; display:inline-flex; align-items:baseline; }
+  .logo-md::after { content:''; display:inline-block; width:.25em; height:.25em; background:currentColor; border-radius:2px; margin-left:.1em; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  .corners { position:absolute; inset:0; padding:48px 64px; pointer-events:none; z-index:3; }
+  .corners > * { position:absolute; font:500 16px/1 var(--font-body); letter-spacing:.3em; text-transform:uppercase; color:#94A3B8; }
+  .tl { top:48px; left:64px; } .tr { top:48px; right:64px; } .bl { bottom:48px; left:64px; } .br { bottom:48px; right:64px; }
+
+  .divider { color:rgba(148,163,184,.5); margin:0 .75em; font-weight:300; }
+
+  /* Stat tile */
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:1fr 1fr; gap:2px; background:rgba(255,255,255,.08); height:100%; }
+  .tile { background:#020617; padding:56px; display:flex; flex-direction:column; justify-content:space-between; }
+  .tile .num { font:900 150px/1 var(--font-display); letter-spacing:-0.03em; }
+  .tile .cap { font:500 20px/1 var(--font-body); letter-spacing:.3em; text-transform:uppercase; color:#94A3B8; }
+
+  /* Content slide */
+  .light { background:#fff; color:#0F172A; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap:80px; height:100%; align-items:center; padding:0 64px; box-sizing:border-box; }
+  .visual-block { aspect-ratio: 1/1; background: linear-gradient(135deg,#000 0%,#020617 50%,#172554 100%); border-radius:40px; position:relative; overflow:hidden; }
+  .visual-block::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 400px 500px at 40% 30%, rgba(147,197,253,.45) 0%, rgba(37,99,235,.2) 30%, transparent 70%); }
+
+  .h1 { font:700 80px/1.1 var(--font-body); letter-spacing:-0.02em; color:#0F172A; }
+  .body-l { font:400 26px/1.5 var(--font-body); color:#475569; max-width:52ch; }
+
+  .btn-primary { font:500 22px var(--font-body); padding:20px 40px; border-radius:999px; background:#2563EB; color:#fff; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:12px; box-shadow:0 0 8px rgba(37,99,235,.3); }
+  .btn-primary .pipe { color:rgba(255,255,255,.45); font-weight:300; }
+
+  /* Ghost type */
+  .ghost { position:absolute; left:-40px; bottom:-30px; font:900 400px/1 var(--font-display); letter-spacing:-0.04em; text-transform:uppercase; color:rgba(255,255,255,.06); white-space:nowrap; pointer-events:none; z-index:0; }
+</style>
+</head>
+<body>
+<script src="deck-stage.js"></script>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- 01 TITLE -->
+  <section data-label="Title">
+    <div class="stage pad" style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="corners">
+        <div class="tl">C<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:2px;margin-left:.1em;vertical-align:baseline;"></span></div>
+        <div class="tr">PROJECT <span class="divider">|</span> DECK-24</div>
+        <div class="bl">© COMPRINT</div>
+        <div class="br">21.04.2026</div>
+      </div>
+      <div style="margin-left:120px;">
+        <div class="logo-lg" style="color:#fff;">COMPRINT</div>
+        <div style="font:900 48px/1 var(--font-display);letter-spacing:-0.03em;text-transform:uppercase;color:#93C5FD;margin-top:24px;">THE SYSTEM CORE</div>
+        <div style="width:48px;height:2px;background:#2563EB;margin:32px 0 24px;"></div>
+        <div style="font:500 20px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">Q1 2026 <span class="divider">|</span> PRODUCT VISION</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 SECTION DIVIDER -->
+  <section data-label="Section Divider">
+    <div class="stage pad" style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="corners"><div class="tl" style="color:#94A3B8;">SECTION 02</div><div class="br">02 / 05</div></div>
+      <div class="ghost">SYSTEM</div>
+      <div style="position:relative;z-index:2;margin-left:120px;">
+        <div style="font:500 24px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;margin-bottom:24px;">01</div>
+        <div style="width:64px;height:2px;background:#2563EB;margin-bottom:40px;"></div>
+        <div class="display-sm" style="color:#fff;">Architecture</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CONTENT (light) -->
+  <section data-label="Content">
+    <div class="light" style="width:100%;height:100%;position:relative;">
+      <div class="corners" style="color:#94A3B8;">
+        <div class="tl" style="color:#0F172A;">COMPRINT<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:1px;margin-left:.1em;"></span></div>
+        <div class="tr">BRIEF <span class="divider">|</span> THE CORE</div>
+        <div class="br">03 / 05</div>
+      </div>
+      <div class="two-col">
+        <div class="visual-block"></div>
+        <div>
+          <div style="font:500 18px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;margin-bottom:32px;">ONE FOCAL POINT</div>
+          <div class="h1">Swiss-engineered.<br/>Quietly intelligent.</div>
+          <div class="body-l" style="margin-top:32px;">Precise. Restrained. Engineered. COMPRINT looks like what would happen if the International Space Station hired Dieter Rams to redesign its UI.</div>
+          <div style="margin-top:48px;">
+            <button class="btn-primary">+ Create <span class="pipe">|</span> Brand Intelligence</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 STATS -->
+  <section data-label="Stats">
+    <div class="grid-3">
+      <div class="tile">
+        <div class="cap">ACCURACY</div>
+        <div class="num" style="color:#fff;">99.2%</div>
+      </div>
+      <div class="tile">
+        <div class="cap">FEATURES</div>
+        <div class="num" style="color:#93C5FD;">40+</div>
+      </div>
+      <div class="tile">
+        <div class="cap">INTEGRATIONS</div>
+        <div class="num" style="color:#fff;">300<span style="color:#2563EB;">+</span></div>
+      </div>
+      <div class="tile stage" style="padding:0;">
+        <div style="padding:56px;position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;">
+          <div class="cap">SPOTLIGHT</div>
+          <div style="font:500 28px/1.3 var(--font-body);color:#fff;max-width:22ch;margin-top:16px;">Data speaks. No hype.</div>
+        </div>
+      </div>
+      <div class="tile" style="background:#0F172A;display:flex;align-items:center;justify-content:center;">
+        <div class="logo-md" style="color:#fff;">COMPRINT</div>
+      </div>
+      <div class="tile stage" style="padding:0;">
+        <div style="padding:56px;position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div class="cap" style="color:#93C5FD;">// BEAM</div>
+          <div style="font:900 72px/1 var(--font-display);letter-spacing:-0.03em;text-transform:uppercase;color:#fff;">CORE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CLOSING -->
+  <section data-label="Closing">
+    <div class="stage pad" style="display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;">
+      <div class="logo-lg" style="color:#fff;">COMPRINT</div>
+      <div style="font:500 22px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:#93C5FD;margin-top:32px;">THE SYSTEM CORE</div>
+      <div style="width:64px;height:2px;background:#2563EB;margin:40px 0;"></div>
+      <div style="font:400 24px var(--font-body);color:rgba(255,255,255,.72);">hello@comprint.com</div>
+    </div>
+  </section>
+
+</deck-stage>
+</body>
+</html>

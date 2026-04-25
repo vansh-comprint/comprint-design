@@ -2,7 +2,7 @@
 
 > **The System Core.** A tech-forward, minimal, engineered brand. Linear / Vercel / Anthropic, lit by a single blue spotlight.
 
-[**↗ View live previews**](https://vansh-comprint.github.io/comprint-design/preview/) · [**↗ Open the deck**](https://vansh-comprint.github.io/comprint-design/slides/)
+[**↗ View live previews**](https://vansh-comprint.github.io/comprint-design/) · [**↗ Open the deck**](https://vansh-comprint.github.io/comprint-design/slides/)
 
 <p align="center">
   <img src="assets/previews/brand-signature.png" alt="Signature visual — grid + spotlight" width="720">
@@ -156,6 +156,7 @@ The brand brief does not ship an icon set. **No icons were found in the provided
 
 ```
 /                         ← this README
+index.html                ← live landing page (GitHub Pages root) — gallery + deck link
 colors_and_type.css       ← all CSS vars (color, type, spacing, shadow, motion)
 SKILL.md                  ← agent-skill manifest (Claude Code compatible)
 assets/

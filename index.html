@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>COMPRINT // Design System</title>
+<meta name="description" content="The System Core — a tech-forward, minimal, engineered brand system.">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #020617; color: #fff; font-family: var(--font-body); }
+  a { color: inherit; text-decoration: none; }
+
+  /* Hero */
+  .stage {
+    position: relative;
+    min-height: 70vh;
+    padding: 96px 64px;
+    background: linear-gradient(135deg, #000 0%, #020617 50%, #172554 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .stage::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size: 80px 80px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 90%);
+    mask-image: radial-gradient(ellipse at center, #000 40%, transparent 90%);
+    pointer-events: none;
+  }
+  .stage::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 1000px 620px at 28% 32%, rgba(147,197,253,.4) 0%, rgba(37,99,235,.22) 30%, transparent 70%);
+    pointer-events: none;
+  }
+  .stage > * { position: relative; z-index: 1; }
+
+  .corners { position: absolute; inset: 0; padding: 32px 48px; pointer-events: none; z-index: 3; font: 500 12px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #94A3B8; }
+  .corners > * { position: absolute; }
+  .tl { top: 32px; left: 48px; }
+  .tr { top: 32px; right: 48px; }
+  .bl { bottom: 32px; left: 48px; }
+  .br { bottom: 32px; right: 48px; }
+  .pipe { color: rgba(148,163,184,.5); margin: 0 .6em; font-weight: 300; }
+
+  .hero { max-width: 1080px; margin: 0 auto; }
+  .eyebrow { font: 500 14px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #94A3B8; margin-bottom: 24px; }
+  .logo { font: 900 clamp(64px, 12vw, 144px)/1 var(--font-display); letter-spacing: -0.03em; text-transform: uppercase; color: #fff; display: inline-flex; align-items: baseline; }
+  .logo::after { content: ''; display: inline-block; width: .25em; height: .25em; background: currentColor; border-radius: 2px; margin-left: .1em; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .tagline { font: 900 clamp(28px, 4vw, 48px)/1.05 var(--font-display); letter-spacing: -0.03em; text-transform: uppercase; color: #93C5FD; margin-top: 16px; }
+  .rule { width: 48px; height: 2px; background: #2563EB; margin: 32px 0 20px; }
+  .meta { font: 500 13px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #94A3B8; }
+
+  .cta-row { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 28px; border-radius: 999px; font: 500 14px var(--font-body);
+    letter-spacing: .04em; cursor: pointer; transition: transform .2s ease;
+  }
+  .btn:hover { transform: scale(1.02); }
+  .btn-primary { background: #2563EB; color: #fff; box-shadow: 0 0 24px rgba(37,99,235,.25); }
+  .btn-primary:hover { background: #1D4ED8; }
+  .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.16); }
+  .btn .pipe-divider { color: rgba(255,255,255,.4); font-weight: 300; }
+
+  /* Sections */
+  main { max-width: 1280px; margin: 0 auto; padding: 96px 48px; }
+  .section { margin-bottom: 96px; }
+  .section-eyebrow { font: 500 12px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #94A3B8; margin-bottom: 14px; }
+  .section-title { font: 900 36px/1 var(--font-display); letter-spacing: -0.02em; text-transform: uppercase; color: #fff; margin: 0 0 8px; }
+  .section-sub { font: 400 16px/1.5 var(--font-body); color: #94A3B8; max-width: 56ch; margin-bottom: 36px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .card {
+    display: flex; flex-direction: column;
+    background: #0F172A;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .card:hover { transform: scale(1.015); border-color: rgba(147,197,253,.4); }
+  .thumb { background: #fff; aspect-ratio: 700/300; overflow: hidden; display: flex; align-items: flex-start; justify-content: center; }
+  .thumb img { width: 100%; height: auto; display: block; }
+  .label { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .label-text { font: 500 13px/1.2 var(--font-body); color: #fff; }
+  .label-meta { font: 400 11px/1 'TWK Everett Mono', monospace; color: #475569; letter-spacing: .04em; }
+
+  .deck-card { grid-column: 1 / -1; }
+  .deck-card .thumb { background: #020617; aspect-ratio: 16/9; }
+  .deck-card .thumb img { object-fit: cover; }
+
+  footer { padding: 48px; border-top: 1px solid rgba(255,255,255,.08); text-align: center; font: 500 12px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #475569; }
+
+  @media (max-width: 720px) {
+    .stage { padding: 64px 24px; min-height: 60vh; }
+    .corners { padding: 16px 24px; }
+    main { padding: 64px 24px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<section class="stage">
+  <div class="corners">
+    <div class="tl">C<span style="display:inline-block;width:.4em;height:.4em;background:currentColor;border-radius:1px;margin-left:.1em;vertical-align:baseline;"></span></div>
+    <div class="tr">DESIGN SYSTEM <span class="pipe">|</span> V1</div>
+    <div class="bl">© COMPRINT</div>
+    <div class="br">Q1 2026</div>
+  </div>
+  <div class="hero">
+    <div class="eyebrow">// Design System</div>
+    <div class="logo">COMPRINT</div>
+    <div class="tagline">The System Core</div>
+    <div class="rule"></div>
+    <div class="meta">Precise <span class="pipe">·</span> Intelligent <span class="pipe">·</span> Engineered</div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="slides/">Open Deck <span class="pipe-divider">|</span> 16:9 Sample</a>
+      <a class="btn btn-ghost" href="https://github.com/vansh-comprint/comprint-design">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <div class="section">
+    <div class="section-eyebrow">// 01 Brand</div>
+    <h2 class="section-title">Brand</h2>
+    <p class="section-sub">Wordmark, signature stage, ghost type, corner metadata.</p>
+    <div class="grid">
+      <a class="card" href="preview/brand-logo.html"><div class="thumb"><img src="assets/previews/brand-logo.png" alt=""></div><div class="label"><span class="label-text">Logo</span><span class="label-meta">brand-logo</span></div></a>
+      <a class="card" href="preview/brand-signature.html"><div class="thumb"><img src="assets/previews/brand-signature.png" alt=""></div><div class="label"><span class="label-text">Signature visual</span><span class="label-meta">brand-signature</span></div></a>
+      <a class="card" href="preview/brand-ghost-type.html"><div class="thumb"><img src="assets/previews/brand-ghost-type.png" alt=""></div><div class="label"><span class="label-text">Ghost type</span><span class="label-meta">brand-ghost-type</span></div></a>
+      <a class="card" href="preview/brand-metadata.html"><div class="thumb"><img src="assets/previews/brand-metadata.png" alt=""></div><div class="label"><span class="label-text">Corner metadata</span><span class="label-meta">brand-metadata</span></div></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-eyebrow">// 02 Color</div>
+    <h2 class="section-title">Color</h2>
+    <p class="section-sub">Four families. Black · White · Slate greys · Signature blue. No other hues.</p>
+    <div class="grid">
+      <a class="card" href="preview/color-black.html"><div class="thumb"><img src="assets/previews/color-black.png" alt=""></div><div class="label"><span class="label-text">Black family</span><span class="label-meta">color-black</span></div></a>
+      <a class="card" href="preview/color-white.html"><div class="thumb"><img src="assets/previews/color-white.png" alt=""></div><div class="label"><span class="label-text">White family</span><span class="label-meta">color-white</span></div></a>
+      <a class="card" href="preview/color-greys.html"><div class="thumb"><img src="assets/previews/color-greys.png" alt=""></div><div class="label"><span class="label-text">Slate greys</span><span class="label-meta">color-greys</span></div></a>
+      <a class="card" href="preview/color-blue.html"><div class="thumb"><img src="assets/previews/color-blue.png" alt=""></div><div class="label"><span class="label-text">Signature blue</span><span class="label-meta">color-blue</span></div></a>
+      <a class="card" href="preview/color-gradients.html"><div class="thumb"><img src="assets/previews/color-gradients.png" alt=""></div><div class="label"><span class="label-text">Gradients</span><span class="label-meta">color-gradients</span></div></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-eyebrow">// 03 Typography</div>
+    <h2 class="section-title">Typography</h2>
+    <p class="section-sub">Chakra Petch 900 for display. Inter for body. TWK Everett Mono for data and metadata.</p>
+    <div class="grid">
+      <a class="card" href="preview/type-display.html"><div class="thumb"><img src="assets/previews/type-display.png" alt=""></div><div class="label"><span class="label-text">Display</span><span class="label-meta">type-display</span></div></a>
+      <a class="card" href="preview/type-body.html"><div class="thumb"><img src="assets/previews/type-body.png" alt=""></div><div class="label"><span class="label-text">Body</span><span class="label-meta">type-body</span></div></a>
+      <a class="card" href="preview/type-mono.html"><div class="thumb"><img src="assets/previews/type-mono.png" alt=""></div><div class="label"><span class="label-text">Mono</span><span class="label-meta">type-mono</span></div></a>
+      <a class="card" href="preview/type-eyebrow.html"><div class="thumb"><img src="assets/previews/type-eyebrow.png" alt=""></div><div class="label"><span class="label-text">Eyebrow</span><span class="label-meta">type-eyebrow</span></div></a>
+      <a class="card" href="preview/type-scale.html"><div class="thumb"><img src="assets/previews/type-scale.png" alt=""></div><div class="label"><span class="label-text">Scale</span><span class="label-meta">type-scale</span></div></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-eyebrow">// 04 Spacing</div>
+    <h2 class="section-title">Spacing &amp; Elevation</h2>
+    <p class="section-sub">8px scale. Pill radii for interactive elements. Shadows soft, never above 20% opacity.</p>
+    <div class="grid">
+      <a class="card" href="preview/spacing-scale.html"><div class="thumb"><img src="assets/previews/spacing-scale.png" alt=""></div><div class="label"><span class="label-text">Scale</span><span class="label-meta">spacing-scale</span></div></a>
+      <a class="card" href="preview/spacing-radii.html"><div class="thumb"><img src="assets/previews/spacing-radii.png" alt=""></div><div class="label"><span class="label-text">Radii</span><span class="label-meta">spacing-radii</span></div></a>
+      <a class="card" href="preview/spacing-elevation.html"><div class="thumb"><img src="assets/previews/spacing-elevation.png" alt=""></div><div class="label"><span class="label-text">Elevation</span><span class="label-meta">spacing-elevation</span></div></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-eyebrow">// 05 Components</div>
+    <h2 class="section-title">Components</h2>
+    <p class="section-sub">Buttons with chamfered cuts. Cards 28–32px radius. Inputs and stat tiles.</p>
+    <div class="grid">
+      <a class="card" href="preview/comp-buttons.html"><div class="thumb"><img src="assets/previews/comp-buttons.png" alt=""></div><div class="label"><span class="label-text">Buttons</span><span class="label-meta">comp-buttons</span></div></a>
+      <a class="card" href="preview/comp-cards.html"><div class="thumb"><img src="assets/previews/comp-cards.png" alt=""></div><div class="label"><span class="label-text">Cards</span><span class="label-meta">comp-cards</span></div></a>
+      <a class="card" href="preview/comp-inputs.html"><div class="thumb"><img src="assets/previews/comp-inputs.png" alt=""></div><div class="label"><span class="label-text">Inputs</span><span class="label-meta">comp-inputs</span></div></a>
+      <a class="card" href="preview/comp-stats.html"><div class="thumb"><img src="assets/previews/comp-stats.png" alt=""></div><div class="label"><span class="label-text">Stat tiles</span><span class="label-meta">comp-stats</span></div></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-eyebrow">// 06 Sample Deck</div>
+    <h2 class="section-title">Sample Deck</h2>
+    <p class="section-sub">Five 16:9 slides — Title, Section divider, Content, Stats grid, Closing. Use ←/→ to navigate.</p>
+    <div class="grid">
+      <a class="card deck-card" href="slides/"><div class="thumb"><img src="assets/previews/slides/slide-01.png" alt=""></div><div class="label"><span class="label-text">Open the live deck →</span><span class="label-meta">slides/index.html</span></div></a>
+    </div>
+  </div>
+
+</main>
+
+<footer>COMPRINT <span class="pipe">·</span> The System Core</footer>
+
+</body>
+</html>

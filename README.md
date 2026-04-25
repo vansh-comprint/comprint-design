@@ -113,19 +113,19 @@ No codebase or Figma file was provided. The system is authored from the brand br
 ## Visual Foundations
 
 - **Palette (4 families, strict):** Black `#000/#020617/#0F172A` · White `#FFFFFF` + dim/faint overlays · Slate greys `#F8FAFC → #0F172A` · Signature blue `#2563EB` (+ light `#93C5FD`, deep `#1D4ED8`). **No other hues, ever.**
-- **Type:** Chakra Petch 900 uppercase (display, logo, big stats); Inter as substitute for TWK Everett (body, UI, eyebrows).
+- **Type:** **TWK Everett Mono** is the system face — every label, eyebrow, heading, button, caption and metadata block. **Chakra Petch 900** is reserved exclusively for the COMPRINT wordmark (logo + tagline lockup). **Inter** is allowed for long-form prose paragraphs only — descriptions, body copy beyond a sentence — where mono becomes hard to read.
 - **Backgrounds:** Dark deep `#020617` with the **Signature Visual** (8% white grid, 80px cells, single blue-white spotlight from top-left). Light surfaces use the panel gradient `#FFF → #F8FAFC`. No photography. No illustrations. No mesh gradients.
 - **Gradients:** Only four allowed — Spotlight (radial), Beam (linear 135deg), Surface (dark), Panel (light). Never pink/purple mesh.
 - **Borders:** `1px solid` on dividers. On dark surfaces, `rgba(255,255,255,.08)` (white-faint). On light, `--grey-100`.
 - **Shadows:** Soft, never > 20% opacity. `sm / md / lg / xl` tiers. A special `blue-glow` `0 0 24px rgba(37,99,235,.25)` reserved for primary CTAs on dark.
-- **Corners:** `24–32px` for cards (pill-adjacent). `999px` pill for every button. `2–8px` for small UI chips. No sharp rectangles for interactive elements.
+- **Corners:** **No radii anywhere.** Every surface is a sharp rectangle. The brand interaction motif is the **chamfer** — a 10–14px diagonal cut on the top-left + bottom-right corner — applied via `clip-path` to primary CTAs (`.btn.cut`) and the occasional hero card (`.card.cut`). Use sparingly: one chamfered surface per layout, not every element.
 - **Layout:** 12-column grid, 32px gutters, **64px minimum slide margin**. Off-center, directional. One focal point per slide. Metadata in all four corners (eyebrow type).
 - **Ghost type:** Oversized faded words (30–40% opacity, same weight as headline) sit behind hero elements for depth.
 - **Animation:** Logo dot pulses 1.5s. Spotlight drifts 8s. Slide transitions: fade + 20px upward slide, 400ms ease-out. Never wipe, spin, zoom. Hover: `scale(1.02)` in 200ms ease. No color change unless state-driven.
 - **Press states:** Slight darken toward `--blue-deep` + `scale(.98)`. No hue shift.
 - **Transparency & blur:** Transparency only in white-faint borders and ghost type. **No glassmorphism** — it has aged poorly.
 - **Imagery temperature:** Cool, blue, high-contrast. No warm tones. No sunsets. No people unless a hand-holding-device mockup lit in blue.
-- **Cards:** 28–32px radius, 1px border in palette grey, `shadow-md` on light or `white-faint` border on dark. No colored left-border accent.
+- **Cards:** Sharp 0px corners by default — 1px border in palette grey, `shadow-md` on light or `white-faint` border on dark. No colored left-border accent. Add `.cut` to apply a 14px chamfer for the single hero card per layout.
 - **The `|` divider motif** separates action + context in UI: `+ Create | Brand Intelligence`.
 
 ---
@@ -146,7 +146,7 @@ The brand brief does not ship an icon set. **No icons were found in the provided
 
 **Chakra Petch (display):** ✅ Local TTFs wired in (`fonts/ChakraPetch-*.ttf`), weights 300–700. The brief asks for **weight 900** — not shipped in this set. The stack maps `900`/`800` → `Bold (700)`, so everything renders, but it'll read slightly lighter than the spec intends. If you want true 900, export a heavier master or license the Black weight.
 
-**TWK Everett Mono:** ✅ Local OTFs wired in (`fonts/TWKEverettMono-*.otf`), weights 100–950. **Heads-up:** this is the *monospaced* cut — not the proportional TWK Everett the brief originally called for. Mono is perfect for data tables, code blocks, eyebrow labels and technical metadata, but body copy in a mono face reads quite differently than a proportional neo-grotesque. For now, `--font-body` is still **Inter** (Google Fonts) and `--font-mono` is TWK Everett Mono.
+**TWK Everett Mono:** ✅ Local OTFs wired in (`fonts/TWKEverettMono-*.otf`), weights 100–950. This is the *monospaced* cut — not the proportional TWK Everett the brief originally called for. **The system has been pivoted to lean into the mono.** `--font-body` now resolves to TWK Everett Mono — every label, eyebrow, heading, button and caption sits on the monospaced grid, which doubles down on the engineered terminal aesthetic. Inter is held in reserve as `--font-prose` for the rare paragraph of long-form copy.
 
 **Decide:** (a) keep Inter for body + use Mono for data/tech UI (current setup), or (b) ship proportional TWK Everett files and I'll swap `--font-body` over.
 

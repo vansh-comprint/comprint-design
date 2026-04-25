@@ -50,7 +50,7 @@
   .hero { max-width: 1080px; margin: 0 auto; }
   .eyebrow { font: 500 14px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #94A3B8; margin-bottom: 24px; }
   .logo { font: 900 clamp(64px, 12vw, 144px)/1 var(--font-display); letter-spacing: -0.03em; text-transform: uppercase; color: #fff; display: inline-flex; align-items: baseline; }
-  .logo::after { content: ''; display: inline-block; width: .25em; height: .25em; background: currentColor; border-radius: 2px; margin-left: .1em; animation: pulse 1.5s ease-in-out infinite; }
+  .logo::after { content: ''; display: inline-block; width: .25em; height: .25em; background: currentColor; border-radius:0; margin-left: .1em; animation: pulse 1.5s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
   .tagline { font: 900 clamp(28px, 4vw, 48px)/1.05 var(--font-display); letter-spacing: -0.03em; text-transform: uppercase; color: #93C5FD; margin-top: 16px; }
   .rule { width: 48px; height: 2px; background: #2563EB; margin: 32px 0 20px; }
@@ -59,28 +59,37 @@
   .cta-row { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
   .btn {
     display: inline-flex; align-items: center; gap: 12px;
-    padding: 16px 28px; border-radius: 999px; font: 500 14px var(--font-body);
-    letter-spacing: .04em; cursor: pointer; transition: transform .2s ease;
+    padding: 16px 32px; font: 500 14px var(--font-body);
+    text-transform: uppercase; letter-spacing: .04em;
+    cursor: pointer; transition: transform .2s ease;
+    border: none;
   }
   .btn:hover { transform: scale(1.02); }
-  .btn-primary { background: #2563EB; color: #fff; box-shadow: 0 0 24px rgba(37,99,235,.25); }
+  .btn-primary {
+    background: #2563EB; color: #fff;
+    box-shadow: 0 0 24px rgba(37,99,235,.25);
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  }
   .btn-primary:hover { background: #1D4ED8; }
-  .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.16); }
-  .btn .pipe-divider { color: rgba(255,255,255,.4); font-weight: 300; }
+  .btn-ghost {
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255,255,255,.16);
+  }
+  .btn .pipe-divider { color: rgba(255,255,255,.4); font-weight: 300; margin: 0 4px; }
 
   /* Sections */
   main { max-width: 1280px; margin: 0 auto; padding: 96px 48px; }
   .section { margin-bottom: 96px; }
   .section-eyebrow { font: 500 12px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #94A3B8; margin-bottom: 14px; }
-  .section-title { font: 900 36px/1 var(--font-display); letter-spacing: -0.02em; text-transform: uppercase; color: #fff; margin: 0 0 8px; }
-  .section-sub { font: 400 16px/1.5 var(--font-body); color: #94A3B8; max-width: 56ch; margin-bottom: 36px; }
+  .section-title { font: 700 36px/1 var(--font-body); letter-spacing: -0.01em; text-transform: uppercase; color: #fff; margin: 0 0 8px; }
+  .section-sub { font: 400 15px/1.55 var(--font-prose); color: #94A3B8; max-width: 56ch; margin-bottom: 36px; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
   .card {
     display: flex; flex-direction: column;
     background: #0F172A;
     border: 1px solid rgba(255,255,255,.08);
-    border-radius: 20px;
+    border-radius:0;
     overflow: hidden;
     transition: transform .2s ease, border-color .2s ease;
   }
@@ -109,7 +118,7 @@
 
 <section class="stage">
   <div class="corners">
-    <div class="tl">C<span style="display:inline-block;width:.4em;height:.4em;background:currentColor;border-radius:1px;margin-left:.1em;vertical-align:baseline;"></span></div>
+    <div class="tl">C<span style="display:inline-block;width:.4em;height:.4em;background:currentColor;border-radius:0;margin-left:.1em;vertical-align:baseline;"></span></div>
     <div class="tr">DESIGN SYSTEM <span class="pipe">|</span> V1</div>
     <div class="bl">© COMPRINT</div>
     <div class="br">Q1 2026</div>
@@ -121,7 +130,7 @@
     <div class="rule"></div>
     <div class="meta">Precise <span class="pipe">·</span> Intelligent <span class="pipe">·</span> Engineered</div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="slides/">Open Deck <span class="pipe-divider">|</span> 16:9 Sample</a>
+      <a class="btn btn-primary" href="slides/">+ Open Deck <span class="pipe-divider">|</span> 16:9 Sample</a>
       <a class="btn btn-ghost" href="https://github.com/vansh-comprint/comprint-design">View on GitHub</a>
     </div>
   </div>

@@ -21,9 +21,9 @@
   .display-sm { font:900 120px/1 var(--font-display); letter-spacing:-0.03em; text-transform:uppercase; }
 
   .logo-lg { font:900 96px/1 var(--font-display); letter-spacing:-0.03em; text-transform:uppercase; display:inline-flex; align-items:baseline; }
-  .logo-lg::after { content:''; display:inline-block; width:.25em; height:.25em; background:currentColor; border-radius:2px; margin-left:.1em; animation: pulse 1.5s ease-in-out infinite; }
+  .logo-lg::after { content:''; display:inline-block; width:.25em; height:.25em; background:currentColor; border-radius:0; margin-left:.1em; animation: pulse 1.5s ease-in-out infinite; }
   .logo-md { font:900 48px/1 var(--font-display); letter-spacing:-0.03em; text-transform:uppercase; display:inline-flex; align-items:baseline; }
-  .logo-md::after { content:''; display:inline-block; width:.25em; height:.25em; background:currentColor; border-radius:2px; margin-left:.1em; animation: pulse 1.5s ease-in-out infinite; }
+  .logo-md::after { content:''; display:inline-block; width:.25em; height:.25em; background:currentColor; border-radius:0; margin-left:.1em; animation: pulse 1.5s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
   .corners { position:absolute; inset:0; padding:48px 64px; pointer-events:none; z-index:3; }
@@ -41,13 +41,20 @@
   /* Content slide */
   .light { background:#fff; color:#0F172A; }
   .two-col { display:grid; grid-template-columns: 1fr 1fr; gap:80px; height:100%; align-items:center; padding:0 64px; box-sizing:border-box; }
-  .visual-block { aspect-ratio: 1/1; background: linear-gradient(135deg,#000 0%,#020617 50%,#172554 100%); border-radius:40px; position:relative; overflow:hidden; }
+  .visual-block { aspect-ratio: 1/1; background: linear-gradient(135deg,#000 0%,#020617 50%,#172554 100%); border-radius:0; position:relative; overflow:hidden; }
   .visual-block::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 400px 500px at 40% 30%, rgba(147,197,253,.45) 0%, rgba(37,99,235,.2) 30%, transparent 70%); }
 
   .h1 { font:700 80px/1.1 var(--font-body); letter-spacing:-0.02em; color:#0F172A; }
   .body-l { font:400 26px/1.5 var(--font-body); color:#475569; max-width:52ch; }
 
-  .btn-primary { font:500 22px var(--font-body); padding:20px 40px; border-radius:999px; background:#2563EB; color:#fff; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:12px; box-shadow:0 0 8px rgba(37,99,235,.3); }
+  .btn-primary {
+    font:500 22px var(--font-body); padding:20px 40px;
+    background:#2563EB; color:#fff; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; gap:12px;
+    box-shadow:0 0 8px rgba(37,99,235,.3);
+    text-transform:uppercase; letter-spacing:.04em;
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  }
   .btn-primary .pipe { color:rgba(255,255,255,.45); font-weight:300; }
 
   /* Ghost type */
@@ -63,7 +70,7 @@
   <section data-label="Title">
     <div class="stage pad" style="display:flex;flex-direction:column;justify-content:center;">
       <div class="corners">
-        <div class="tl">C<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:2px;margin-left:.1em;vertical-align:baseline;"></span></div>
+        <div class="tl">C<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:0;margin-left:.1em;vertical-align:baseline;"></span></div>
         <div class="tr">PROJECT <span class="divider">|</span> DECK-24</div>
         <div class="bl">© COMPRINT</div>
         <div class="br">21.04.2026</div>
@@ -94,7 +101,7 @@
   <section data-label="Content">
     <div class="light" style="width:100%;height:100%;position:relative;">
       <div class="corners" style="color:#94A3B8;">
-        <div class="tl" style="color:#0F172A;">COMPRINT<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:1px;margin-left:.1em;"></span></div>
+        <div class="tl" style="color:#0F172A;">COMPRINT<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:0;margin-left:.1em;"></span></div>
         <div class="tr">BRIEF <span class="divider">|</span> THE CORE</div>
         <div class="br">03 / 05</div>
       </div>

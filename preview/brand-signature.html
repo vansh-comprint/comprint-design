@@ -1,7 +1,7 @@
 <!doctype html>
 <html><head><meta charset="utf-8"><title>Signature Visual</title><link rel="stylesheet" href="_card.css">
 <style>
-.stage { position: relative; height: 260px; border-radius: 20px; overflow: hidden; background: linear-gradient(135deg,#000 0%,#020617 50%,#172554 100%); }
+.stage { position: relative; height: 260px; border-radius:0; overflow: hidden; background: linear-gradient(135deg,#000 0%,#020617 50%,#172554 100%); }
 .stage::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:60px 60px; -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%); mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%); }
 .stage::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 500px 300px at 30% 30%, rgba(147,197,253,.5) 0%, rgba(37,99,235,.25) 30%, transparent 70%); }
 .stage .fg { position:relative; z-index:1; padding:30px; color:#fff; height:100%; display:flex; flex-direction:column; justify-content:space-between; }
@@ -12,10 +12,10 @@
   <div class="eyebrow" style="color:#94A3B8;">Signature Visual — Grid + Spotlight</div>
   <div class="stage">
     <div class="fg">
-      <div style="font:500 10px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">BRAND FINGERPRINT</div>
+      <div style="font:500 10px/1 'TWK Everett Mono','JetBrains Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#94A3B8;">BRAND FINGERPRINT</div>
       <div>
-        <div style="font:900 44px/1 'Chakra Petch',sans-serif;letter-spacing:-0.03em;text-transform:uppercase;display:inline-flex;align-items:baseline;">COMPRINT<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:1px;margin-left:.1em;"></span></div>
-        <div style="font:500 12px/1 Inter;letter-spacing:.3em;text-transform:uppercase;color:#93C5FD;margin-top:10px;">THE SYSTEM CORE</div>
+        <div style="font:900 44px/1 'Chakra Petch',sans-serif;letter-spacing:-0.03em;text-transform:uppercase;display:inline-flex;align-items:baseline;">COMPRINT<span style="display:inline-block;width:.25em;height:.25em;background:currentColor;border-radius:0;margin-left:.1em;"></span></div>
+        <div style="font:500 12px/1 'TWK Everett Mono','JetBrains Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#93C5FD;margin-top:10px;">THE SYSTEM CORE</div>
       </div>
     </div>
   </div>
